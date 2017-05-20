@@ -1,0 +1,9 @@
+.Index {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.Index-contact {
+  background-color: #FFFF00;
+}
