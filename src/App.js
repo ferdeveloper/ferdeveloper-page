@@ -1,17 +1,15 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
+import React from 'react';
+import Contact from './components/Contact/Contact';
+import Content from './components/Content/Content';
 import './App.css';
 
-class App extends Component {
+export default class App extends React.Component {
   render() {
     return (
       <div className="Index">
-        <div className="Index-contact">
-          <h1>Fernando Arenas</h1>
-        </div>
+        <Contact />
+        <Content />
       </div>
     );
   }
 }
-
-export default App;
