@@ -1,0 +1,1 @@
+.PercentLines{display:flex;flex-direction:row;justify-content:space-between;}.PercentLines-container{display:flex;flex-direction:column;justify-content:center;position:relative;width:100%;}.PercentLines-container-bar{background-color:#29d8f2;width:20%;height:20px;position:absolute}
