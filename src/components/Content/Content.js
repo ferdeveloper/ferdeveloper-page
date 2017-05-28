@@ -6,7 +6,9 @@ export default class Content extends React.Component {
   render() {
     return (
       <div className="Content" >
-        <PercentLines />
+        <PercentLines
+          percentage="75"
+        />
       </div>
     );
   }

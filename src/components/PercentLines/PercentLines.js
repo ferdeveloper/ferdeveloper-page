@@ -3,11 +3,12 @@ import React, { PropTypes } from 'react';
 export default class PercentLines extends React.Component {
 
   static propTypes = {
-    showPercent: PropTypes.bool,
+    percentage: PropTypes.number.isRequired,
+    showPercentageNumber: PropTypes.bool,
   }
 
   static defaultProps = {
-    showPercent: true,
+    showPercentageNumber: true,
   }
 
   constructor(props) {
@@ -15,9 +16,9 @@ export default class PercentLines extends React.Component {
     this.initializeState();
   }
 
-  getPercent() {
-    if (this.props.showPercent) {
-      return '89%';
+  getPercentage() {
+    if (this.props.showPercentageNumber) {
+      return `${this.props.percentage}%`;
     }
 
     return null;
@@ -25,7 +26,7 @@ export default class PercentLines extends React.Component {
 
   initializeState() {
     this.state = {
-      showPercent: this.props.showPercent,
+      showPercent: this.props.showPercentageNumber,
     };
   }
 
@@ -34,9 +35,15 @@ export default class PercentLines extends React.Component {
       <div className="PercentLines">
         <p>Holi</p>
         <div className="PercentLines-container">
-          <div className="PercentLines-container-bar" />
+          <div
+            className="PercentLines-container-bar"
+            style={{
+              width: this.getPercentage(),
+              background: '#FFFF00',
+            }}
+          />
         </div>
-        <p>{this.getPercent()}</p>
+        <p>{this.getPercentage()}</p>
       </div>
     );
   }
