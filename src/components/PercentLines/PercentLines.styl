@@ -2,16 +2,28 @@
 
 .PercentLines
   display flex
-  flex-direction row
+  flex-direction column
   justify-content space-between
-  &-container
+  &-block
     display flex
-    flex-direction column
-    justify-content center
-    position: relative
-    width 100%
-    &-bar
-      background primary_light
-      width 20%
-      height 10px
-      position: absolute
+    flex-direction row
+    justify-content flex-start
+    &-text
+      text-align right
+      width 100px
+      padding-right .5em
+    &-percentage
+      text-align left
+      width 100px
+      padding-left .5em
+    &-barContainer
+      display flex
+      flex-direction column
+      justify-content center
+      position relative
+      width 100%
+      &-bar
+        background primary_light
+        width 20%
+        height 10px
+        position absolute

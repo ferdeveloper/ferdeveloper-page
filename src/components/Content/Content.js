@@ -1,5 +1,6 @@
 import React from 'react';
 import PercentLines from '../PercentLines/PercentLines';
+import percentageData from '../../resources/data/mySkills.json';
 
 export default class Content extends React.Component {
 
@@ -7,7 +8,7 @@ export default class Content extends React.Component {
     return (
       <div className="Content" >
         <PercentLines
-          percentage="75"
+          percentageData={percentageData}
         />
       </div>
     );

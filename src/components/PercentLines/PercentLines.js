@@ -3,7 +3,7 @@ import React, { PropTypes } from 'react';
 export default class PercentLines extends React.Component {
 
   static propTypes = {
-    percentage: PropTypes.number.isRequired,
+    percentageData: PropTypes.array.isRequired,
     showPercentageNumber: PropTypes.bool,
   }
 
@@ -16,12 +16,46 @@ export default class PercentLines extends React.Component {
     this.initializeState();
   }
 
-  getPercentage() {
+  getPercentage(percentage) {
     if (this.props.showPercentageNumber) {
-      return `${this.props.percentage}%`;
+      return `${percentage}%`;
     }
 
     return null;
+  }
+
+  getObject = (object) => {
+    const percentage = this.getPercentage(object.percentage);
+    return (
+      <div className="PercentLines-block">
+        <p
+          className="PercentLines-block-text"
+          style={{
+            width: '100px',
+          }}
+        >
+          {object.name}
+        </p>
+        <div className="PercentLines-block-barContainer">
+          <div
+            className="PercentLines-block-barContainer-bar"
+            style={{
+              width: percentage,
+              background: '#29D8F2',
+            }}
+          />
+        </div>
+        <p
+          className="PercentLines-block-percentage"
+        >
+          {percentage}
+        </p>
+      </div>
+    );
+  }
+
+  getObjectsBlock() {
+    return this.props.percentageData.map(this.getObject);
   }
 
   initializeState() {
@@ -33,17 +67,7 @@ export default class PercentLines extends React.Component {
   render() {
     return (
       <div className="PercentLines">
-        <p>Holi</p>
-        <div className="PercentLines-container">
-          <div
-            className="PercentLines-container-bar"
-            style={{
-              width: this.getPercentage(),
-              background: '#FFFF00',
-            }}
-          />
-        </div>
-        <p>{this.getPercentage()}</p>
+        {this.getObjectsBlock()}
       </div>
     );
   }
