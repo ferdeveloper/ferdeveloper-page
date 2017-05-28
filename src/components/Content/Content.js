@@ -9,6 +9,7 @@ export default class Content extends React.Component {
       <div className="Content" >
         <PercentLines
           percentageData={percentageData}
+          textWidth={'100px'}
         />
       </div>
     );

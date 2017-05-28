@@ -5,6 +5,7 @@ export default class PercentLines extends React.Component {
   static propTypes = {
     percentageData: PropTypes.array.isRequired,
     showPercentageNumber: PropTypes.bool,
+    textWidth: PropTypes.string,
   }
 
   static defaultProps = {
@@ -17,11 +18,7 @@ export default class PercentLines extends React.Component {
   }
 
   getPercentage(percentage) {
-    if (this.props.showPercentageNumber) {
-      return `${percentage}%`;
-    }
-
-    return null;
+    return `${percentage}%`;
   }
 
   getObject = (object) => {
@@ -31,7 +28,7 @@ export default class PercentLines extends React.Component {
         <p
           className="PercentLines-block-text"
           style={{
-            width: '100px',
+            width: this.props.textWidth,
           }}
         >
           {object.name}
@@ -48,7 +45,11 @@ export default class PercentLines extends React.Component {
         <p
           className="PercentLines-block-percentage"
         >
-          {percentage}
+          {
+            this.props.showPercentageNumber
+            &&
+            percentage
+          }
         </p>
       </div>
     );
