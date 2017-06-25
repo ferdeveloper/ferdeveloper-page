@@ -1,7 +1,7 @@
 import React from 'react';
+import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import PercentLines from '../PercentLines/PercentLines';
 import percentageData from '../../resources/data/mySkills.json';
-import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 
 export default class Content extends React.Component {
 

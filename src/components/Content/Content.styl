@@ -1,2 +1,15 @@
+@require '../../styles/colors.styl'
+@require '../../styles/responsive.styl'
+
 .Content
   width 100%
+  & .react-tabs
+    & .react-tabs__tab--selected
+      color primary
+    & ul
+      display flex
+      flex-direction row
+      justify-content space-between
+      & li
+        list-style none
+        cursor pointer
