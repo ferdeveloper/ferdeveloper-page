@@ -16,6 +16,8 @@
       text-align left
       width 100px
       padding-left .5em
+      animation-name colisionBar
+      animation-duration 1s
     &-barContainer
       display flex
       flex-direction column
@@ -27,3 +29,15 @@
         width 20%
         height 10px
         position absolute
+        animation-name chargeBar
+        animation-duration 1s
+
+@keyframes chargeBar {
+    0% {width: 0%;}
+}
+
+@keyframes colisionBar {
+    0% {opacity: 0}
+    50% {opacity: 0}
+    100% {opacity: 1}
+}

@@ -16,24 +16,13 @@ export default class Content extends React.Component {
 
   getTabs = () => {
 
-    const tabs = [
-      {
-        name: 'Sobre mí',
-        component: <p>Holi!!!</p>,
-      },
-      {
-        name: 'Skills',
-        component: this.getPercentLines(),
-      },
-    ];
-
     return (
       <Tabs>
         <TabList>
           <Tab>{'Sobre mí'}</Tab>
           <Tab>{'Skills'}</Tab>
         </TabList>
-
+        <hr />
         <TabPanel>
           <h2>Any content 1</h2>
         </TabPanel>
